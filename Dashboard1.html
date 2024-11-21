@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Completo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 125vh;
+        }
+
+        /* Encabezado de navegación */
+        nav {
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav table {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        nav td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav img {
+            width: 120px;
+            height: 50px;
+        }
+
+        #settings-icon {
+            background-color: yellow;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 90%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .chart-container h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .chart-container p {
+            margin: 5px 0 15px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        canvas {
+            max-width: 100%;
+            max-height: 300px;
+        }
+        .custom-link {
+            font-size: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .custom-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard">
+        <div class="chart-container" >
+            <h2>Tipo de usuarios</h2>
+            <p>Cantidad de tipos de usuarios que registra la pagina</p>
+            <canvas id="bar-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Ventas al modulo "Viaje"</h2>
+            <p>numero de visitas al modulo de "Viaje" en el año 2024</p>
+            <canvas id="line-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Interaccion de modulos</h2>
+            <p>Cantidad de vicitas que recive cada Modulo</p>
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Interaccion de tipo de usuarios</h2>
+            <p>Comparación de tipos de usuario en la pagina</p>
+            <canvas id="radar-chart"></canvas>
+        </div>
+    </div>
+
+    <a href="index.html" class="custom-link">← Volver</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gráfico de Barras
+            var ctxBar = document.getElementById('bar-chart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['Cliente', 'Conductor'],
+                    datasets: [{
+                        label: '# de Votos',
+                        data: [352, 182],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de Líneas
+            var ctxLine = document.getElementById('line-chart').getContext('2d');
+            new Chart(ctxLine, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio','agosto', 'septiembre'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [78, 60, 18, 11, 6, 55, 60,45,30],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                }
+            });
+
+            // Gráfico de Pastel
+            var ctxPie = document.getElementById('pie-chart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['Viaja','Conduce', 'Mis Viajes','contactanos','Ajustes','Quienes Somos'],
+                    datasets: [{
+                        label: '%',
+                        data: [35, 22, 20,10,10,3],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(241, 241, 15)',
+                            'rgb(241, 15, 241)',
+                            'rgb(14, 102, 85)',
+                            'rgb(60, 75, 207)',
+                            'rgb(54, 162, 10)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            });
+
+            // Gráfico de Radar
+            var ctxRadar = document.getElementById('radar-chart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: ['Viaja','Conduce', 'Mis Viajes','contactanos','Ajustes','Quienes Somos'],
+                    datasets: [{
+                        label: 'Cliente',
+                        data: [65, 10, 90,20,10,23],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }, {
+                        label: 'Conductor',
+                        data: [5, 58, 4,52,33,27],
+                        fill: true,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(54, 162, 235)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

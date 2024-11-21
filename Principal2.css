@@ -1,0 +1,1024 @@
+/* Estilos globales */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #FFD700;
+    /* Fondo amarillo */
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Encabezado */
+header {
+    background-color: #000;
+    /* Fondo negro */
+    padding: 6px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    /* Texto blanco */
+}
+
+/* Estilo de la navegación */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    color: #ff8c00;
+    /* Fondo amarillo al hover */
+}
+
+.perfil-dropdown {
+    position: relative;
+}
+
+
+.perfil-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60%;
+    /* Subir el menú más cerca del perfil */
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    list-style: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+
+/* Enlaces dentro del dropdown */
+.perfil-dropdown .dropdown-menu a {
+    display: flex;
+    /* Alinear íconos y texto */
+    align-items: center;
+    /* Centrar íconos y texto verticalmente */
+    justify-content: center;
+    /* Centrar contenido horizontalmente */
+    gap: 10px;
+    /* Espaciado entre ícono y texto */
+    color: #ffffff;
+    /* Texto negro */
+    padding: 10px 4px;
+    /* Espaciado interno uniforme */
+    text-decoration: none;
+    /* Quitar subrayado */
+    font-size: 16px;
+    /* Tamaño del texto */
+    width: 100%;
+    /* Asegurar que el enlace ocupa todo el ancho */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transición suave para hover */
+}
+
+/* Hover en los enlaces del menú */
+.perfil-dropdown .dropdown-menu a:hover {
+    color: #ff8c00;
+    /* Texto naranja al pasar el mouse */
+}
+
+/* Botón de perfil */
+#perfil-button {
+    background-color: #c2c2c2;
+    /* Fondo gris claro */
+    color: #000;
+    /* Texto negro */
+    border-radius: 7px;
+    /* Bordes redondeados */
+    padding: 10px 35px;
+    /* Espaciado interno */
+    font-size: 18px;
+    /* Ajustar tamaño de texto */
+    font-weight: bold;
+    /* Texto en negrita */
+    cursor: pointer;
+    display: flex;
+    /* Alinear ícono y texto */
+    align-items: center;
+    /* Centrar verticalmente */
+    justify-content: center;
+    /* Centrar texto e ícono horizontalmente */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* Tipo de letra */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    /* Transición suave */
+    box-sizing: border-box;
+    /* Asegurar que el padding esté incluido en el ancho total */
+}
+
+/* Hover en el botón */
+#perfil-button:hover {
+    background-color: #FFA500;
+    /* Fondo naranja */
+}
+
+/* Mostrar el menú al pasar el mouse o hacer clic */
+.perfil-dropdown:hover .dropdown-menu,
+.perfil-dropdown:focus-within .dropdown-menu {
+    display: block;
+    /* Mostrar el menú */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Evita que los elementos se envuelvan */
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos */
+    align-items: flex-start;
+    /* Alinea los elementos en la parte superior */
+}
+
+/* Estilo para la sección del viaje */
+.viaje-section {
+    flex: 1;
+    /* Ocupa el espacio disponible */
+    margin: 20px;
+    /* Espaciado entre secciones */
+    display: flex;
+    /* Usar flexbox para alinear contenido */
+    position: relative;
+    /* Hace que .right-content sea relativo a este contenedor */
+}
+
+/* Sección izquierda */
+.left-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content {
+    position: absolute;
+    top: 5px;
+    /* Ajusta la distancia desde la parte superior */
+    right: 1px;
+    /* Ajusta la distancia desde el lado derecho */
+    left: 730px;
+    width: 50%;
+    /* Mantén el ancho fijo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-content h1 {
+    font-family: "Kumar One", serif;
+    font-size: 40px;
+    font-weight: 100;
+    text-align: center;
+    margin: 0;
+    /* Esto elimina completamente el margen */
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-ubicacion {
+    position: relative;
+    /* Necesario para la posición absoluta del ícono */
+    display: flex;
+    /* Usa flexbox para alinear los elementos */
+    align-items: center;
+    /* Alinear verticalmente */
+    margin: 10px;
+    /* Margen entre los inputs */
+    width: 100%;
+    /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+
+.input-ubicacion input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    /* Mantén el espaciado interno */
+    border: 1px solid #ccc;
+    /* Borde de los campos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    /* Sombra más pronunciada hacia abajo */
+    background-color: #ffffff;
+    /* Color de fondo de los inputs */
+    opacity: 0.8;
+    /* Opacidad del 80% */
+    color: #000000;
+    /* Color del texto */
+    font-size: 20px;
+    /* Tamaño de letra del input */
+}
+
+/* Ícono dentro del campo de entrada */
+.input-ubicacion .icon {
+    position: absolute;
+    /* Posición absoluta dentro del contenedor */
+    left: 10px;
+    /* Espaciado desde la izquierda */
+    color: #000000;
+    /* Color negro para el ícono */
+}
+
+/* Estilo para el contenedor de selección de pasajeros */
+.input-pasajeros {
+    display: flex;
+    /* Usar flexbox para alinear elementos */
+    align-items: center;
+    /* Alinear verticalmente */
+    gap: 15px;
+    /* Espacio entre los elementos */
+}
+
+/* Estilo para la etiqueta */
+.input-pasajeros label {
+    font-size: 20px;
+    /* Tamaño de fuente */
+    color: #000000;
+    /* Color del texto */
+    font-weight: bold;
+    /* Negrita */
+    margin-left: 10px;
+    /* Ajusta este valor para mover el label a la izquierda */
+}
+
+.input-pasajeros select {
+    padding: 5px 15px;
+    /* Espaciado interno */
+    border: 2px solid #000;
+    /* Borde negro */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #000;
+    /* Color del texto */
+    font-size: 20px;
+    /* Tamaño de la fuente */
+    transition: border-color 0.3s;
+    /* Transición para el borde */
+}
+
+#Aceptar {
+    padding: 5px 30px;
+    /* Espaciado interno */
+    border: 3px solid #000;
+    /* Borde negro */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #000;
+    /* Color de fondo negro */
+    color: #ffffff;
+    /* Color del texto blanco */
+    font-size: 20px;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambiar cursor al pasar el mouse */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Transiciones suaves */
+}
+
+#Aceptar:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+    /* Aumentar ligeramente el tamaño */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.sort-btn {
+    font-family: "Kumar One", serif;
+    border-radius: 5px;
+    /* Bordes redondeados */
+    margin: 5px;
+    /* Espaciado entre botones */
+    background-color: #000000;
+    /* Fondo blanco */
+    cursor: pointer;
+    /* Cambiar cursor al pasar el mouse */
+    transition: background-color 0.3s;
+    /* Transición suave */
+    color: white;
+    font-size: 18px;
+    padding: 2px 10px;
+}
+
+.sort-btn:hover {
+    background-color: orange;
+}
+
+.discount {
+    font-size: 20px;
+    font-family: "Kumar One", serif;
+    color: #000;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 6px;
+    border-left: 10px solid #00ff22;
+    border-radius: 5px;
+    height: 30px;
+    width: 50%;
+    /* Cambia esto a tu necesidad (px, %, em, etc.) */
+    transform: translate(40%, -20%);
+}
+
+#conductores-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -20px;
+}
+
+.vehicle-option {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 20px;
+    padding: 36px;
+    gap: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    font-size: 12px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    width: 610px;
+    /* Ajusta el ancho como desees */
+    height: 16px;
+}
+
+/* Estilo para la opción seleccionada */
+.vehicle-option.selected {
+    background-color: lightblue;
+    /* Color al seleccionar el vehículo */
+}
+
+
+.vehicle-option img {
+    height: auto;
+    /* Altura de la imagen del vehículo */
+    width: 100px;
+    /* Ancho de la imagen del vehículo */
+    margin-right: 10px;
+    /* Espaciado entre imagen y texto */
+}
+
+.vehicle-option h3 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.vehicle-option .price {
+    font-weight: bold;
+    color: green;
+    margin-top: 10px;
+}
+
+.Mapa-section iframe {
+    border: 20px solid #000000;
+    /* Borde negro de 20px */
+    outline: 10px solid #000000;
+    /* Línea negra de 10px alrededor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    max-width: 100%;
+}
+
+/* Contenedor principal para el botón y los descuentos */
+.descuento-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* Espaciado entre los elementos */
+    margin-top: 20px;
+}
+
+/* Estilo para los enlaces de descuento */
+.descuento-link {
+    font-size: 18px;
+    color: #007bff;
+    /* Azul Bootstrap */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.descuento-link:hover {
+    color: #0056b3;
+    /* Azul más oscuro al pasar el cursor */
+    text-decoration: underline;
+}
+
+/* Estilo para el botón central */
+.confirm-btn {
+    padding: 10px 20px;
+    background-color: #000;
+    /* Negro */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #ff8c00;
+    /* Naranja al pasar el cursor */
+    transform: scale(1.05);
+    /* Zoom ligero */
+}
+
+.input-group label {
+    font-size: 20px;
+    /* Tamaño de fuente */
+    color: #000000;
+    /* Color del texto */
+    font-weight: bold;
+    /* Negrita */
+    margin-left: 10px;
+    /* Ajusta este valor para mover el label a la izquierda */
+}
+
+
+/*   ---------------------------------- */
+
+.misviajes-section {
+    width: 100%;
+    /* Ocupa todo el ancho */
+    height: 91vh;
+    /* Ocupa todo el alto visible de la ventana */
+    background-image: url('Misviajesfondo.png');
+    /* Imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen para que cubra toda la ventana */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    color: #fff;
+    /* Cambia el color del texto para que sea legible */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    display: flex;
+    /* Activa flexbox */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    position: relative;
+    /* Para usar el overlay opcional */
+}
+
+.misviajes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.212);
+    /* Capa negra semitransparente */
+    z-index: 0;
+    /* Asegura que la capa esté detrás del contenido */
+}
+
+.misviajes-section * {
+    position: relative;
+    /* Asegura que el contenido esté sobre la capa */
+    z-index: 1;
+}
+
+.misviajes-section h1 {
+    font-family: 'Kumar One', serif;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+    position: relative;
+    top: -30px;
+    /* Mueve el título más arriba */
+    margin-bottom: 10px;
+    padding-top: 3px;
+    background-color: #FFD700;
+}
+
+.misviajes-section h2 {
+    font-family: 'Kumar One', serif;
+    font-size: 30px;
+    text-align: left;
+    color: #000;
+    top: -40px;
+    /* Mueve el título más arriba */
+    margin-left: 40px;
+    /* Mueve el título 40px a la derecha */
+}
+
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    /* Espacio más amplio entre los elementos */
+    margin-bottom: 20px;
+    padding-left: 350px;
+    margin-top: -110px;
+    position: relative;
+    /* Permite el uso de top */
+    top: -80px;
+    /* Mueve el bloque 20px más arriba */
+}
+
+.filters select,
+.buscar input[type="date"] {
+    z-index: 10;
+    /* Asegura que esté encima de otros elementos */
+    position: relative;
+    /* Establece un contexto de posicionamiento */
+    pointer-events: auto;
+    /* Habilita la interacción */
+}
+
+
+
+.filters select {
+    font-size: 18px;
+    /* Aumenta el tamaño de la letra */
+    padding: 8px 20px;
+    /* Espaciado interno más grande */
+    border: 2px solid #ffffff;
+    /* Borde dorado */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    background-color: #ffffff;
+    /* Fondo claro */
+    color: #000;
+    /* Texto negro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    transition: all 0.3s ease;
+    /* Transición para los efectos */
+    cursor: pointer;
+    /* Cursor en forma de mano */
+}
+
+.filters select:hover {
+    background-color: #FFFACD;
+    /* Fondo más claro en hover */
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño en hover */
+}
+
+.buscar {
+    background-color: #d8bdff;
+    /* Fondo claro */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    display: flex;
+    flex-direction: column;
+    /* Coloca elementos en columna */
+    gap: 10px;
+    /* Espacio entre los elementos */
+    width: 500px;
+    /* Ajusta el ancho */
+    margin-left: 115px;
+    /* Fija la posición desde el borde izquierdo */
+    position: relative;
+    /* Controla el desplazamiento */
+    top: 70px;
+    /* Mueve el contenedor ligeramente hacia abajo */
+    z-index: 1;
+    /* Asegura que este contenedor esté encima de otros */
+}
+
+.buscar hr {
+    border: none;
+    /* Elimina el borde predeterminado */
+    border-top: 3px solid #a889d2;
+    /* Línea decorativa */
+    margin: 0px 0;
+    /* Espaciado arriba y abajo */
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+}
+
+.buscar label {
+    font-size: 18px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Negrita */
+    color: #000000;
+    /* Texto oscuro */
+    font-family: 'Roboto', sans-serif;
+    /* Fuente personalizada */
+    font-size: 25px;
+}
+
+.buscar input[type="date"] {
+    font-size: 18px;
+    /* Tamaño de letra */
+    padding: 10px 30px;
+    /* Espaciado interno */
+    border: 3px solid #886dae;
+    /* Borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #fff;
+    /* Fondo blanco */
+    color: #000000;
+    /* Texto negro */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Sombra interna */
+    transition: border-color 0.3s ease;
+    /* Transición suave */
+    position: relative;
+    /* Controla superposición */
+    z-index: 2;
+    /* Asegura que esté encima de otros elementos */
+    visibility: visible;
+    /* Asegura que sea visible */
+    pointer-events: auto;
+    /* Permite la interacción */
+}
+
+.buscar .botones {
+    display: flex;
+    /* Alinea los botones en una fila */
+    justify-content: space-between;
+    /* Coloca un botón a la izquierda y otro a la derecha */
+    margin-top: 10px;
+    /* Espacio superior entre el input y los botones */
+}
+
+.buscar .botones button {
+    font-size: 16px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Negrita */
+    padding: 10px 30px;
+    /* Espaciado interno */
+    border: none;
+    /* Sin bordes */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #000;
+    /* Fondo negro */
+    color: #fff;
+    /* Texto blanco */
+    cursor: pointer;
+    /* Cursor en forma de mano */
+    transition: background-color 0.3s ease;
+    /* Transición suave */
+}
+
+.buscar .botones button:hover {
+    background-color: #b176cc;
+    /* Fondo púrpura claro al pasar el mouse */
+}
+
+.imagen-lista {
+    text-align: center;
+    /* Centra todo el contenido */
+    align-items: center;
+    padding: 10px;
+    /* Espaciado interno */
+    margin-left: 880px;
+}
+
+.imagen-lista img {
+    margin-top: -20px;
+    width: 540px;
+    /* Ancho de la imagen */
+    height: auto;
+    /* Mantén las proporciones */
+    margin: none;
+    /* Espacio debajo de la imagen */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+.imagen-lista h3 {
+    font-family: 'Kumar One', serif;
+    margin-top: -3px;
+    font-size: 22px;
+    /* Tamaño de letra del título principal */
+    color: #000000;
+    /* Color oscuro */
+    margin-bottom: 5px;
+    /* Espacio inferior */
+}
+
+.imagen-lista h4 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: -5px;
+    background-color: #ffffff42;
+    font-size: 20px;
+    /* Tamaño de letra del subtítulo */
+    font-weight: normal;
+    /* Peso normal */
+    color: #000000;
+    /* Color gris */
+}
+
+.imagen-lista .confirm-btn {
+    padding: 12px 20px;
+    /* Espaciado interno correcto (vertical 12px, horizontal 20px) */
+    width: auto;
+    /* Asegura que el ancho se ajuste al contenido */
+    max-width: 100px;
+    /* Opcional: Limita el ancho máximo */
+    text-align: center;
+    /* Centra el texto */
+    margin-left: 30px;
+}
+
+.viajes-lista {
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Espacio entre tarjetas */
+    position: relative;
+    top: -480px;
+    cursor: pointer;
+}
+
+.viaje-tarjeta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 30px;
+    padding: 7px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    width: 55%;
+    margin-left: 40px;
+    margin-bottom: 15px;
+    /* Espacio entre las tarjetas */
+}
+
+.viaje-tarjeta:hover {
+    transform: scale(1.02);
+    /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.viaje-tarjeta img {
+    width: 140px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.viaje-info {
+    display: flex;
+    flex-direction: column;
+    /* Organiza los textos en columna */
+    align-items: flex-start;
+    /* Alinea todo el contenido a la izquierda */
+    gap: 5px;
+    /* Espaciado entre las líneas de texto */
+    margin: 0;
+    /* Elimina márgenes adicionales */
+    padding: 0;
+    /* Asegura que no haya espaciado interno */
+    text-align: left;
+    /* Asegura que el texto esté alineado a la izquierda */
+    margin-left: 20px;
+}
+
+.viaje-info p {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+}
+
+.viaje-precio {
+    display: flex;
+    flex-direction: column;
+    /* Coloca el precio arriba del botón */
+    align-items: flex-end;
+    /* Alinea todo a la derecha */
+    gap: 10px;
+    /* Espacio entre el precio y el botón */
+    margin-left: auto;
+    /* Empuja el contenedor hacia la derecha */
+    padding-right: 50px;
+}
+
+.viaje-precio p {
+    margin: 0;
+    /* Elimina márgenes adicionales */
+    font-size: 18px;
+    font-weight: bold;
+    color: #00a62f;
+    text-align: right;
+    /* Asegura que el texto esté alineado a la derecha */
+}
+
+.viaje-precio button {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* Botón circular */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    transition: background-color 0.3s;
+}
+
+.viaje-precio button:hover {
+    background: #ff8c00;
+}
+
+/*GESTIONAR CUENTA*/
+/* Usar Kurale en títulos */
+/* Ajustar el contenedor de la sección */
+.gestionar-cuenta-section {
+    font-family: 'Kurale', serif;
+    width: 100%;
+    /* Ocupa todo el ancho */
+    height: auto;
+    /* Ajusta el alto al contenido */
+    background-color: black;
+    /* Fondo negro */
+    text-align: left;
+    /* Asegura que el texto y contenido estén alineados a la izquierda */
+    display: block;
+    /* Mantén el comportamiento predeterminado de bloque */
+    position: relative;
+    /* Para usar el overlay opcional */
+    margin: 0;
+    /* Elimina márgenes externos */
+    padding: 0;
+    /* Agrega un poco de espacio interno si es necesario */
+}
+
+/* Encabezado fijo y libre */
+.gestionar-cuenta-section h1 {
+    font-family: 'Kumar One', serif;
+    /* Fuente del título */
+    font-size: 30px;
+    /* Tamaño de la fuente */
+    color: #000;
+    /* Color del texto */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    position: relative;
+    /* Permite mover el título con top/left */
+    top: 0px;
+    /* Ajusta la posición vertical del título */
+    margin: 0;
+    /* Elimina márgenes externos */
+    padding: 5px 65px;
+    /* Espaciado interno */
+    background-color: #FFD700;
+    /* Fondo amarillo */
+    width: 100%;
+    /* Asegura que ocupe el 100% del ancho del contenedor */
+    box-sizing: border-box;
+    /* Incluye el padding en el cálculo del ancho */
+}
+
+/* Títulos de las Secciones */
+.titulo-configuracion,
+.titulo-seguridad,
+.titulo-viaje {
+    font-family: 'Kurale', serif;
+    /* Fuente para el título */
+    font-size: 24px;
+    /* Tamaño del texto */
+    color: #ffffff;
+    /* Color blanco */
+    margin-top: 10px;
+    /* Aumenta el margen superior para moverlo más abajo */
+    margin-bottom: 20px;
+    /* Agrega espacio adicional debajo si es necesario */
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+}
+
+.i {
+    display: flex;
+    /* Activa Flexbox */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100%;
+    /* Asegura que ocupe todo el alto necesario */
+    margin-left: 20px;
+    /* Elimina cualquier margen innecesario */
+}
+
+.perfil-imagen {
+    height: 100px;
+    /* Define la altura */
+    width: auto;
+    /* Mantén la proporción */
+    border-radius: 50%;
+    /* Hace la imagen circular */
+}
+
+.configuracion {
+    font-family: 'Kurale', serif;
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 5px solid #FFD700;
+    /* Borde amarillo */
+    margin: -10px auto;
+    /* Usa margen negativo para subir */
+    width: 1350px;
+}
+
+.perfil-configuracion {
+    display: grid;
+    /* Usa Grid Layout */
+    grid-template-columns: auto 1fr 2fr 2fr 1fr;
+    /* Personaliza el ancho de las columnas */
+    gap: 20px;
+    /* Aumenta el espacio entre filas y columnas */
+    justify-content: start;
+    /* Alinea horizontalmente al inicio */
+    align-items: center;
+    /* Centra verticalmente */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+}
+
+
+
+
+
+/* Botones */
+.acciones {
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: center;
+    /* Centra horizontalmente */
+    gap: 20px;
+    /* Espaciado entre los botones */
+    margin-top: 30px;
+    /* Espaciado superior */
+}
+
+.btn-cerrar,
+.btn-eliminar {
+    padding: 10px 20px;
+    font-family: 'Kurale', serif;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cerrar {
+    background-color: #FFD700;
+    color: black;
+    border: none;
+}
+
+.btn-cerrar:hover {
+    background-color: #e6c200;
+}
+
+.btn-eliminar {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+}
+
+.btn-eliminar:hover {
+    background-color: #b69a00;
+}

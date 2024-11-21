@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS (v4 primero si es el que usas globalmente) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="Principal.css" />
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- jQuery (necesario para Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap 5 (si necesitas usarlo en casos aislados) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script personalizado -->
+    <script src="Principal.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-black bg-black">
+            <a class="navbar-brand" href="index.html" id="logoPrincipal">
+                <img src="a/icon.png" alt="logo" width="125" height="auto" class="d-inline-block align-top" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="viaje-link"><i class="fas fa-plane"></i> Viaja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="conduce-link"><i class="fas fa-car"></i> Conduce</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="conocenos-link"><i class="fas fa-users"></i> Conócenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="contactanos-link"><i
+                                class="fas fa-envelope"></i>Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="idioma-link"><i class="fas fa-globe"></i> ES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="inicia-link"><i class="fas fa-sign-in-alt"></i> Inicia
+                            sección</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#" id="registrate-link"><i
+                                class="fas fa-user-plus"></i>Regístrate</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Principal -->
+    <section id="principal-section" class="container my-2">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1>Viaja a cualquier lugar con Quickly</h1>
+                <p>Pide un viaje, súbete al vehículo y relájate.</p>
+                <a href="#" class="btn btn-custom" onclick="mostrarSeccion('viaje')">¡Pide un viaje!</a>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <img src="a/Portada.png" class="img-fluid" alt="Ilustración de viaje"
+                    style="width: 540px; height: 560px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Viaja -->
+    <section id="viaje-section" style="display: flex; align-items: center; justify-content: center;">
+        <div class="container_original">
+            <div class="login-container">
+                <h1 class="titulo">
+                    <i class="fas fa-user-circle"></i> Iniciar Sesión
+                </h1>
+                <p>¿Cuál es tu número de teléfono o email?</p>
+
+                <!-- Formulario de inicio de sesión -->
+                <form class="form-login" id="loginForm">
+                    <input type="email" name="email" class="input" placeholder="Introducir número de teléfono o e-mail"
+                        required />
+                    <input type="password" name="password" class="input" placeholder="Introducir contraseña" required />
+                    <!-- Botón personalizado -->
+                    <button type="button" class="btn btn-lg btn-danger" id="continueBtn" data-bs-toggle="popover"
+                        title="Bienvenida(o)" data-bs-content="Empieza tu viaje en Quickly^^">
+                        Continuar
+                    </button>
+                </form>
+
+                <!-- Enlace para recuperar contraseña con spinner -->
+                <a class="link" href="terminos.html" id="loadLink" onclick="showSpinner(event)">
+                    ¿Olvidaste tu contraseña?
+                    <span class="spinner"></span>
+                </a>
+
+                <!-- Separador visual -->
+                <div class="separator">
+                    <span>----------------------------------------------------- O
+                        -----------------------------------------------------</span>
+                </div>
+
+                <!-- Opciones alternativas -->
+                <div class="auth-options">
+                    <button type="button" class="btn btn-outline-primary">
+                        <i class="fab fa-google"></i> Continuar con Google
+                    </button>
+                    <button type="button" class="btn btn-outline-dark">
+                        <i class="fab fa-apple"></i> Continuar con Apple
+                    </button>
+                </div>
+
+                <!-- Términos y condiciones -->
+                <p class="terms">
+                    Al continuar, aceptas recibir llamadas, mensajes de WhatsApp o SMS/RCS, incluso por medios
+                    automatizados de Quickly y sus filiales al número proporcionado.
+                </p>
+            </div>
+
+            <!-- Imagen ilustrativa -->
+            <img src="a/ini_secion.jpg" alt="Ilustración de inicio de sesión" class="img-session" />
+        </div>
+    </section>
+
+    <!-- Sección Conduce -->
+    <section id="conduce-section" class="container-fluid mt-0 pt-3 section-content" style="display: none">
+        <!-- Navbar interno para Conduce -->
+        <nav>
+            <a id="logoPrincipal" href="#">CONDUCE</a>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs justify-content-start" id="conduceTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="descripcion-tab" data-toggle="tab" href="#descripcion"
+                                role="tab" aria-controls="descripcion" aria-selected="true">Descripción general</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="requisitos-tab" data-toggle="tab" href="#requisitos" role="tab"
+                                aria-controls="requisitos" aria-selected="false">Requisitos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="aspectos-tab" data-toggle="tab" href="#aspectos" role="tab"
+                                aria-controls="aspectos" aria-selected="false">Aspectos básicos para conducir</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="seguridad-tab" data-toggle="tab" href="#seguridad" role="tab"
+                                aria-controls="seguridad" aria-selected="false">Seguridad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab"
+                                aria-controls="contacto" aria-selected="false">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Contenido de la sección -->
+        <div class="conduce-container mt-4">
+            <!-- Contenedor del título -->
+            <div class="conduce-title-container">
+                <h1 class="conduce-title">¡Aprovecha la oportunidad ya!</h1>
+                <p class="conduce-description">
+                    Aprovecha al máximo tu tiempo al volante en la plataforma con la red
+                    más grande de usuarios activos.
+                </p>
+                <a href="#registro" class="btn btn-reg">¡Regístrate para conducir!</a>
+                <p class="mt-3">
+                    ¿Ya tienes una cuenta?
+                    <a href="#" onclick="mostrarSeccion('viaje')" class="conduce-link">Iniciar sesión</a>
+                </p>
+                <h3 class="mt-4 ganancias-title">¡GRANDES GANANCIAS TE ESPERAN!</h3>
+            </div>
+            <!-- Contenedor de la imagen -->
+            <div class="conduce-image-container">
+                <img src="a/Conduceportada.png" alt="Ilustración de viaje" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Conócenos -->
+    <section id="conocenos-section" style="display: none;">
+        <div class="text-center">
+            <h1 class="conocenos-title">¡Conócenos!</h1>
+            <div class="btn-container mt-3">
+                <a href="Dashboard1.html" class="btn btn-conocenos">
+                    Visualizar Dashboard 1
+                </a>
+
+                <!-- Botón para Dashboard 2 -->
+                <a href="Dashboard2.html" class="btn btn-conocenos">
+                    Visualizar Dashboard 2
+                </a>
+            </div>
+        </div>
+        <!-- Contenedor de Dashboards -->
+        <div class="dashboard-container text-center mt-4">
+            <div id="dashboard1" class="dashboard-card" style="display: none">
+                <div class="card">
+                    <div class="front">Dashboard 1</div>
+                    <div class="back">Contenido del Dashboard 1</div>
+                </div>
+            </div>
+            <div id="dashboard2" class="dashboard-card" style="display: none">
+                <div class="card">
+                    <div class="front">Dashboard 2</div>
+                    <div class="back">Contenido del Dashboard 2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactanos-section" style="display: none;">
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Imagen al lado izquierdo -->
+            <aside class="left-image">
+                <img src="a/chica.png" alt="Ilustración de una persona" loading="lazy">
+            </aside>
+            <!-- Contenedor de contacto -->
+            <section class="container" id="contacto">
+                <h1>¡Visite nuestras redes sociales!</h1>
+                <h2>¡Contáctenos!</h2>
+                <!-- Formulario de contacto -->
+                <form class="contact-form" action="#" method="POST" aria-label="Formulario de contacto"
+                    onsubmit="return validateForm()">
+                    <label for="name">Nombre y apellido:<span class="required"> *</span></label>
+                    <input type="text" id="name" name="name" placeholder="Ingrese sus nombres y apellidos" required
+                        maxlength="50" autocomplete="name">
+
+                    <label for="email">Correo electrónico:<span class="required"> *</span></label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su correo" required
+                        autocomplete="email">
+
+                    <label for="message">Mensaje:<span class="required"> *</span></label>
+                    <textarea id="message" name="message" placeholder="Ingrese comentario/mensaje" rows="3" required
+                        maxlength="300"></textarea>
+
+                    <button type="submit">Enviar</button>
+                    <p id="formError" style="display:none;color:red;">Por favor complete todos los campos correctamente.
+                    </p>
+                    <p id="successMessage" style="display:none;color:green;">¡Mensaje enviado exitosamente!</p>
+                </form>
+                <h4 class="base">¡No esperes más, nuestras redes sociales están llenos de información!</h4>
+            </section>
+        </main>
+
+        <!-- Íconos de redes sociales en cuadrícula -->
+        <footer class="social-icons">
+            <a href="https://wa.me/123456789" target="_blank" aria-label="WhatsApp - Enviar mensaje"><img src="a/wh.png"
+                    alt="Icono de WhatsApp" loading="lazy"></a>
+            <a href="https://x.com/Quickly" target="_blank" aria-label="X (Twitter) - Síguenos"><img src="a/x.png"
+                    alt="Icono de X" loading="lazy"></a>
+            <a href="https://facebook.com/Quickly" target="_blank" aria-label="Facebook - Síguenos"><img src="a/fb.png"
+                    alt="Icono de Facebook" loading="lazy"></a>
+            <a href="https://instagram.com/Quickly" target="_blank" aria-label="Instagram - Síguenos"><img
+                    src="a/ig.png" alt="Icono de Instagram" loading="lazy"></a>
+        </footer>
+    </section>
+
+    <section id="inicia-section" style="display: none">
+        <div class="container">
+            <div class="contenido-izquierda">
+                <h1>Inicia sesión para conducir y hacer entregas</h1>
+                <div class="fle-derecha">
+                    <a href="#" onclick="mostrarSeccion('viaje')"";>
+                        <img src=" a/derecha.jpg" width="120" height="50" alt="Flecha derecha" />
+                    </a>
+                </div>
+            </div>
+            <div class="contenido-derecha">
+                <h1>Inicia sesión para viajar</h1>
+                <div class="fle-derecha">
+                    <a href="#" onclick="mostrarSeccion('viaje')"";>
+                        <img src=" a/derecha.jpg" width="120" height="50" alt="Flecha derecha" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="imagenes">
+            <div class="contenido-abajo">
+                <img src="a/condutor_1.jpg" width="830" height="350" alt="Conductor" />
+                <img src="a/viaje_user.jpg" width="770" height="350" alt="Usuario viajando" />
+            </div>
+        </div>
+    </section>
+
+    <section id="registrate-section" style="display: none">
+        <div class="container">
+            <div class="contenido-izquierda">
+                <h1>Registrate para conducir y hacer entregas</h1>
+                <div class="fle-derecha">
+                    <a href="#" onclick="mostrarSeccion('registroConductor')" ;>
+                        <img src="a/derecha.jpg" width="130" height="50" alt="Flecha derecha" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="contenido-derecha">
+                <h1>Crea una cuenta de usuario</h1>
+                <div class="fle-derecha">
+                    <a href="#" onclick="mostrarSeccion('registroUsuario')"";>
+                        <img src=" a/derecha.jpg" width="130" height="50" alt="Flecha derecha">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="imagenes">
+            <div class="contenido-abajo">
+                <img src="a/condutor_1.jpg" width="830" height="350" alt="Conductor" />
+                <img src="a/viaje_user.jpg" width="770" height="350" alt="Usuario viajando" />
+            </div>
+        </div>
+    </section>
+
+
+    <section class="rC-section container mt-5" style="display: block;">
+        <h1 class="text-center mb-4">Registro de Conductor</h1>
+        <div class="row">
+            <div class="col-md-6 formulario-coloreado">
+                <form id="registroUsuarioForm" class="p-3 border rounded shadow">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label">
+                                <i class="fas fa-user"></i> Nombre
+                            </label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-venus-mars"></i> Género
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <div class="form-check me-3">
+                                    <input class="form-check-input" type="radio" name="genero" id="generoM"
+                                        value="Masculino">
+                                    <label class="form-check-label" for="generoM">Masculino</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genero" id="generoF"
+                                        value="Femenino">
+                                    <label class="form-check-label" for="generoF">Femenino</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="apellidos" class="form-label">
+                                <i class="fas fa-user"></i> Apellidos
+                            </label>
+                            <input type="text" class="form-control" id="apellido" name="apellido"
+                                placeholder="Tu apellido" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="edad" class="form-label">
+                                <i class="fas fa-birthday-cake"></i> Edad
+                            </label>
+                            <input type="number" class="form-control" id="edad" name="edad" placeholder="Tu edad"
+                                value="18" min="1" max="120" step="1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Teléfono -->
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </label>
+                            <input type="text" class="form-control" id="telefono" name="telefono"
+                                placeholder="Tu teléfono" required>
+                        </div>
+
+                        <!-- Licencia -->
+                        <div class="col-md-6 mb-3">
+                            <label for="licencia" class="form-label">
+                                <i class="fas fa-id-card"></i> Licencia
+                            </label>
+                            <input type="file" class="form-control" id="licencia" name="licencia" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Titular -->
+                        <div class="col-md-6 mb-3">
+                            <label for="titular" class="form-label">
+                                <i class="fas fa-user"></i> Titular
+                            </label>
+                            <input type="text" class="form-control" id="titular" name="titular"
+                                placeholder="Nombre del titular" required>
+                        </div>
+
+                        <!-- Modelo de carro -->
+                        <div class="col-md-6 mb-3">
+                            <label for="modelo" class="form-label">
+                                <i class="fas fa-car"></i> Modelo de carro
+                            </label>
+                            <input type="text" class="form-control" id="modelo" name="modelo"
+                                placeholder="Modelo de carro" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- PLaxa -->
+                        <div class="col-md-6 mb-3">
+                            <label for="placa" class="form-label">
+                                <i class="fas fa-user"></i> N° placa
+                            </label>
+                            <input type="text" class="form-control" id="placa" name="placa" placeholder="N placa"
+                                required>
+                        </div>
+
+                        <!-- Color de carro -->
+                        <div class="col-md-6 mb-3">
+                            <label for="color" class="form-label">
+                                <i class="fas fa-car"></i> Color de carro
+                            </label>
+                            <input type="text" class="form-control" id="color" name="color" placeholder="Color de carro"
+                                required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">
+                            <i class="fas fa-id-card"></i> Foto del vehiculo:
+                        </label>
+                        <input type="file" class="form-control" id="foto" name="foto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">
+                            <i class="fas fa-comment-dots"></i> Comentario
+                        </label>
+                        <textarea class="form-control" id="comentario" name="comentario" rows="3"
+                            placeholder="Escribe tus comentarios"></textarea>
+                    </div>
+                    <div class="row align-items-center">
+                        <!-- Mensaje de términos -->
+                        <div class="col-md-6 mb-3">
+                            <label for="color" class="form-label">
+                                <i></i> Términos y condiciones
+                            </label>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="col-md-6 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="aceptarTerminos"
+                                    name="aceptarTerminos" required>
+                                <label class="form-check-label" for="aceptarTerminos">Aceptar términos y
+                                    condiciones</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="button" class="btn btn-outline-primary">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">
+                            <i class="fab fa-apple"></i> Continuar con Apple
+                        </button>
+                    </div>
+
+                    <!-- Términos y Condiciones -->
+                    <p class="mt-4 text-muted text-center">
+                        <a href="#" class="text-red">Al continuar, aceptas recibir llamadas, mensajes de WhatsApp o
+                            SMS/RCS, incluso por medios automatizados, de Quickly y sus filiales al número
+                            proporcionado.</a>
+                    </p>
+                </form>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center align-items-center p-0 border rounded shadow">
+                <img src="a/regC.png" class="img-fluid rounded" alt="Imagen de ejemplo">
+            </div>
+        </div>
+    </section>
+
+    <section class="rU-section container mt-5" style="display: block;">
+        <h1 class="text-center mb-4">Registro de Usuario</h1>
+        <div class="row">
+            <!-- Columna izquierda: Formulario -->
+            <div class="col-md-6 formulario-coloreado">
+                <form id="registroUsuarioForm" class="p-3 border rounded shadow">
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">
+                            <i class="fas fa-user"></i> Nombre
+                        </label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Tu nombre completo" required>
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">
+                            <i class="fas fa-user"></i> Apellidos
+                        </label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos"
+                            placeholder="Tus apellidos" required>
+                    </div>
+
+                    <!-- DNI y Teléfono en una línea -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="dni" class="form-label">
+                                <i class="fas fa-id-card"></i> DNI
+                            </label>
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="Tu DNI" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label">
+                                <i class="fas fa-phone"></i> Teléfono
+                            </label>
+                            <input type="text" class="form-control" id="telefono" name="telefono"
+                                placeholder="Tu teléfono" required>
+                        </div>
+                    </div>
+
+                    <!-- Correo Electrónico -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i> Correo Electrónico
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Tu correo electrónico" required>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock"></i> Contraseña
+                        </label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Tu contraseña" required minlength="6">
+                    </div>
+
+                    <!-- Confirmar Contraseña -->
+                    <div class="mb-3">
+                        <label for="confirmar_password" class="form-label">
+                            <i class="fas fa-lock"></i> Confirmar Contraseña
+                        </label>
+                        <input type="password" class="form-control" id="confirmar_password" name="confirmar_password"
+                            placeholder="Confirma tu contraseña" required minlength="6">
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="button" class="btn btn-outline-primary">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">
+                            <i class="fab fa-apple"></i> Continuar con Apple
+                        </button>
+                    </div>
+
+                    <!-- Términos y Condiciones -->
+                    <p class="mt-4 text-muted text-center">
+                        <a href="#" class="text-red">Al continuar, aceptas recibir llamadas, mensajes de WhatsApp o
+                            SMS/RCS, incluso por medios automatizados, de Quickly y sus filiales al número
+                            proporcionado.</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Columna derecha: Imagen o contenido adicional -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center p-0 border rounded shadow">
+                <img src="a/regU.png" class="img-fluid rounded" alt="Imagen de ejemplo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="custom-footer py-3 bg-black text-white">
+        <div class="container">
+            <div class="row">
+                <!-- Columna de logo -->
+                <div class="col-md-2 custom-column mb-4 mb-md-0">
+                    <img src="a/icon.png" alt="Logo Quickly" class="img-fluid" />
+                </div>
+
+                <!-- Columna de enlaces -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <!-- Columna: Compañía -->
+                        <div class="col-md-3 custom-column">
+                            <h5>Compañía</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-light">Quiénes somos</a></li>
+                                <li><a href="#" class="text-light">Lo que ofrecemos</a></li>
+                                <li><a href="#" class="text-light">Inversionistas</a></li>
+                                <li>
+                                    <a href="#" class="text-light">Oportunidades laborales</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Columna: Producto -->
+                        <div class="col-md-3 custom-column">
+                            <h5>Producto</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-light">Viaja</a></li>
+                                <li><a href="#" class="text-light">Conduce</a></li>
+                                <li><a href="#" class="text-light">Blog</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Columna: Ciudadanía Global -->
+                        <div class="col-md-3 custom-column">
+                            <h5>Ciudadanía Global</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-light">Seguridad</a></li>
+                                <li><a href="#" class="text-light">Sostenibilidad</a></li>
+                                <li>
+                                    <a href="#" class="text-light">Diversidad e Inclusión</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Columna: Viajes -->
+                        <div class="col-md-3 custom-column">
+                            <h5>Viajes</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-light">Reserva un viaje</a></li>
+                                <li><a href="#" class="text-light">Ofertas especiales</a></li>
+                                <li><a href="#" class="text-light">Ayuda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gyb4FV2Bg2ILyYp18FcHpD8xxJnxEjz7CJ7M8f5rLibrp2ANkM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-pNgn0gE4JcBjU6tMnv5zCMbdFdxI1xdsEp3KbkkI55P2HdG0f1lmqL4RdIQzFROU"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

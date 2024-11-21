@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickly - Transporte Seguro</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .landing-container {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            width: 90%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Decoración amarilla */
+        .yellow-decor {
+            background-color: #ffcc00;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            opacity: 0.8;
+            z-index: 0;
+        }
+        .yellow-decor.one { top: -50px; left: -50px; }
+        .yellow-decor.two { bottom: -50px; right: -50px; }
+        
+        /* Contenido de la imagen */
+        .image-section {
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .image-section img {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        /* Contenido de texto y botones */
+        .content-section {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .content-section h1 {
+            font-size: 2em;
+            color: #ffcc00;
+            margin: 0 0 10px 0;
+        }
+        .content-section h2 {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+        }
+        .content-section p {
+            color: #bfbfbf;
+            font-size: 1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .cta-button {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            width: fit-content;
+        }
+        .cta-button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Formulario */
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Iconos de redes sociales */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor de la Landing Page -->
+    <div class="landing-container">
+        <!-- Decoración de fondo amarilla -->
+        <div class="yellow-decor one"></div>
+        <div class="yellow-decor two"></div>
+        
+        <!-- Sección de Imagen -->
+        <div class="image-section">
+            <img src="img-landin/icon.png" alt="Aplicación de transporte Quickly">
+        </div>
+
+        <!-- Sección de Contenido -->
+        <div class="content-section">
+            <h1>Quickly</h1>
+            <h2>Tu Compañero de Viaje</h2>
+            <p>Descubre la nueva forma de moverte en la ciudad con seguridad y comodidad. Quickly te ofrece una experiencia de transporte confiable y rápida, adaptada a tus necesidades. ¡Explora nuestras opciones y elige cómo quieres moverte!</p>
+            
+            <!-- Formulario para descargar ebook -->
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <input type="submit" value="Descargar Ahora">
+            </form>
+
+            <!-- Iconos de Redes Sociales -->
+            <div class="social-icons">
+                <a href="#"><img src="img-landin/whatsapp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="img-landin/x.png" alt="X"></a>
+                <a href="#"><img src="img-landin/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img-landin/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <button class="rbtn"><a href="Principal2.html">Go Back</a></button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickly - Reserva tu Viaje</title>
+    <link rel="stylesheet" href="Principal2.css" />
+    <script src="Principal2.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="a/icon.png" alt="logo" width="125" height="auto" style="display: block;" />
+            </a>
+        </div>
+        <nav>
+            <a href="#" id="viaje-link" data-target="viaje"><i class="fas fa-route"></i> Viaje</a>
+            <a href="#" id="reservas-link" data-target="reservas"><i class="fas fa-calendar-check"></i> Reservas</a>
+            <a href="#" id="vehiculos-link" data-target="vehiculos"><i class="fas fa-car-side"></i> Vehículos</a>
+            <a href="#" id="misviajes-link" data-target="misViajes"><i class="fas fa-suitcase-rolling"></i> Mis
+                Viajes</a>
+
+
+            <!-- Botón de perfil con dropdown -->
+            <div class="perfil-dropdown">
+                <button id="perfil-button">
+                    <i class="fas fa-user"></i> Perfil ▼
+                </button>
+                <ul class="dropdown-menu" style="display: none;">
+                    <li><a href="#" id="gestionar-cuenta-link"><i class="fas fa-user-cog"></i> Gestionar cuenta</a></li>
+                    <li><a href="#"><i class="fas fa-tags"></i> Promociones</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Asistencia</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="gestionar-cuenta-section" style="display: none;">
+            <h1><i class="fas fa-user-circle"></i> Configuración</h1>
+
+            <!-- Sección Configuración -->
+            <h2 class="titulo-configuracion">Configuración</h2>
+            <div class="configuracion">
+                <div class="perfil-configuracion">
+                    <div class="i">
+                        <img src="a/12.png" alt="Andy Mendoza" class="perfil-imagen">
+                    </div>
+                    <div class="columna">
+                        <p>Andy Mendoza</p>
+                        <p>+51 923 555 213</p>
+                    </div>
+                    <div class="columna">
+                        <p><i class="fas fa-home"></i> Casa: Av. España 132, Los Ol.</p>
+                        <p><i class="fas fa-briefcase"></i> Trabajo: Av. Barranco cuadra 132</p>
+                    </div>
+                    <div class="columna">
+                        <p><i class="fas fa-envelope"></i> Correo: andy.mendoza12@gmail.com</p>
+                        <p><i class="fas fa-bell"></i> Notificaciones: SI</p>
+                    </div>
+                    <div class="columna">
+                        <p>➜</p> <!-- Flecha a la derecha -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Seguridad -->
+            <h2 class="titulo-seguridad">Seguridad</h2>
+            <div class="configuracion">
+                <div class="perfil-configuracion">
+                    <div class="columna">
+                        <p><i class="fas fa-shield-alt"></i> Preferencias de seguridad</p>
+                        <p><i class="fas fa-user-shield"></i> Administra tus contactos de confianza</p>
+                        <p><i class="fas fa-lock"></i> Verifica tus viajes - PIN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Preferencias de Viaje -->
+            <h2 class="titulo-viaje">Preferencias de viaje</h2>
+            <div class="configuracion">
+                <div class="perfil-configuracion">
+                    <div class="columna">
+                        <p><i class="fas fa-plane"></i> Reservar</p>
+                        <p><i class="fas fa-receipt"></i> Información de tus facturas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="acciones">
+                <button id="cerrar-sesion" class="btn-cerrar">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+                <button id="eliminar-cuenta" class="btn-eliminar">
+                    <i class="fas fa-trash-alt"></i> Eliminar cuenta
+                </button>
+            </div>
+
+        </section>
+
+        <section class="viaje-section">
+            <div class="left-content">
+                <h1>¡Consigue un viaje!</h1>
+                <div class="input-container">
+                    <div class="input-ubicacion">
+                        <div class="icon"><i class="fas fa-location-arrow"></i></div>
+                        <input type="text" placeholder="Ubicación de recogida" />
+                    </div>
+                    <div class="input-ubicacion">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <input type="text" placeholder="Ubicación de destino" />
+                    </div>
+                </div>
+                <div class="input-pasajeros">
+                    <label>Seleccione cantidad de pasajeros:</label>
+                    <select id="pasajeros-select">
+                        <option value="1">1 Pasajero</option>
+                        <option value="2">2 Pasajeros</option>
+                        <option value="3">3 Pasajeros</option>
+                        <option value="4">4 Pasajeros</option>
+                        <option value="5">5 Pasajeros</option>
+                        <option value="6">6 Pasajeros</option>
+                        <option value="7">7 Pasajeros</option>
+                        <option value="8">8 Pasajeros</option>
+                        <option value="9">9 Pasajeros</option>
+                    </select>
+                    <button id="Aceptar">Aceptar</button>
+                </div>
+                <div class="input-group">
+                    <label>Mostrar por precios:</label>
+                    <button class="sort-btn" id="sort-asc">Menor precio ↑</button>
+                    <button class="sort-btn" id="sort-desc">Mayor precio ↓</button>
+                </div>
+                <div class="discount">¡Tiene un descuento del 35%!</div>
+                <div id="conductores-container" style="display: none;"></div>
+            </div>
+            <div class="right-content">
+                <div class="Mapa-section">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499488.6592935362!2d-77.61109121072147!3d-12.025947353450675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1730235133294!5m2!1ses-419!2spe"
+                        width="700" height="540" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="descuento-container">
+                    <!-- Enlaces con anclajes -->
+                    <a href="Landing1.html" class="descuento-link">DESCUENTO 1</a>
+                    <a href="#confirmar" class="confirm-btn">¡Confirmar viaje! >>></a>
+                    <a href="Landing2.html" class="descuento-link">DESCUENTO 2</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones -->
+        <section class="reservas-section" style="display: none;">
+            <h1>Tus Reservas</h1>
+        </section>
+
+        <section class="vehiculos-section" style="display: none;">
+            <h1>Vehículos Disponibles</h1>
+        </section>
+
+        <section class="misviajes-section">
+            <h1>¡Visualiza tus viajes realizados!</h1>
+            <h2>Anteriores</h2>
+            <div class="filters">
+                <select id="tipo-viaje">
+                    <option value="personal">🚗 Personal</option>
+                    <option value="corporativo">🏢 Corporativo</option>
+                </select>
+                <select id="todos-viajes">
+                    <option value="todos">🌍 Todos los viajes</option>
+                    <option value="recientes">🕒 Recientes</option>
+                </select>
+                <div class="buscar">
+                    <label for="fecha">Ingresa fecha del viaje a buscar</label>
+                    <hr> <!-- Línea horizontal -->
+                    <input type="date" id="fecha">
+                    <div class="botones">
+                        <button type="button">Cancelar</button>
+                        <button type="button">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imagen-lista">
+                <img src="a/mVc.png" alt="Imagen">
+                <h3>Consigue un viaje en cuestión de minutos</h3>
+                <h4>Pide un Quickly desde el navegador web, sin instalar la app</h4>
+                <a href="#" class="confirm-btn">Solicitar un viaje ></a>
+            </div>
+
+            <div class="viajes-lista">
+                <div class="viaje-tarjeta">
+                    <img src="a/mVCar.png" alt="Vehículo">
+                    <div class="viaje-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: green;"></i><strong>Av. Nicolas Ayllón
+                                2040</strong></p>
+                        <p><i class="fas fa-arrow-down" style="color: gray;"></i></p>
+                        <p><i class="fas fa-map-marker-alt" style="color: red;"></i> Avenida Ernesto Diez Canseco 655
+                        </p>
+                    </div>
+                    <div class="viaje-precio">
+                        <p>S/. 7.90</p>
+                        <button>►</button>
+                    </div>
+                </div>
+                <div class="viaje-tarjeta">
+                    <img src="a/mVCar.png" alt="Vehículo">
+                    <div class="viaje-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: green;"></i><strong>Av. 30 Agosto
+                                1995</strong></p>
+                        <p><i class="fas fa-arrow-down" style="color: gray;"></i></p>
+                        <p><i class="fas fa-map-marker-alt" style="color: red;"></i> C. San Martin Anexo 2 Los ficus</p>
+                    </div>
+                    <div class="viaje-precio">
+                        <p>S/. 10.90</p>
+                        <button>►</button>
+                    </div>
+                </div>
+                <div class="viaje-tarjeta">
+                    <img src="a/mVCar.png" alt="Vehículo">
+                    <div class="viaje-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: green;"></i><strong>Av. 30 Agosto
+                                1995</strong></p>
+                        <p><i class="fas fa-arrow-down" style="color: gray;"></i></p>
+                        <p><i class="fas fa-map-marker-alt" style="color: red;"></i>Avenida. A calle 41 Mz. 134 Lt 10.
+                        </p>
+                    </div>
+                    <div class="viaje-precio">
+                        <p>S/. 15.90</p>
+                        <button>►</button>
+                    </div>
+                </div>
+                <div class="viaje-tarjeta">
+                    <img src="a/mVCar.png" alt="Vehículo">
+                    <div class="viaje-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: green;"></i><strong>Av. Nicolas Ayllón
+                                2040</strong></p>
+                        <p><i class="fas fa-arrow-down" style="color: gray;"></i></p>
+                        <p><i class="fas fa-map-marker-alt" style="color: red;"></i>Parque del amor - Barranco - SM</p>
+                    </div>
+                    <div class="viaje-precio">
+                        <p>S/. 25.90</p>
+                        <button>►</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

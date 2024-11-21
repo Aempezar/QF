@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quickly</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 125vh;
+        }
+
+        /* Encabezado de navegación */
+        nav {
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav table {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        nav td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav img {
+            width: 120px;
+            height: 50px;
+        }
+
+        #settings-icon {
+            background-color: yellow;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Dashboard */
+        #dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 90%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .chart-container h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .chart-container p {
+            margin: 5px 0 15px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        canvas {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        .custom-link {
+            font-size: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .custom-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dashboard de gráficos -->
+    <div id="dashboard">
+        <div class="chart-container">
+            <h2>KM. recorridos por Mes</h2>
+            <canvas id="bar-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Ingresos Mensuales con la App</h2>
+            <canvas id="line-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Porcentaje de Viajes Cancelados</h2>
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Cantidad de Estrellas Recibidas</h2>
+            <canvas id="radar-chart"></canvas>
+        </div>
+    </div>
+
+    <a href="index.html" class="custom-link mt-4 d-block text-center">← Volver</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gráfico de Barras
+            var ctxBar = document.getElementById('bar-chart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
+                    datasets: [{
+                        label: 'KM',
+                        data: [70, 65, 55, 60, 75, 80, 85, 90, 70, 75, 80, 85],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de Líneas
+            var ctxLine = document.getElementById('line-chart').getContext('2d');
+            new Chart(ctxLine, {
+                type: 'line',
+                data: {
+                    labels: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
+                    datasets: [{
+                        label: 'Ingresos',
+                        data: [80, 90, 100, 110, 120, 130, 140, 130, 120, 110, 130, 140],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                }
+            });
+
+            // Gráfico de Pastel
+            var ctxPie = document.getElementById('pie-chart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['Cancelados', 'Realizados'],
+                    datasets: [{
+                        data: [45, 55],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            });
+
+            // Gráfico de Radar
+            var ctxRadar = document.getElementById('radar-chart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: ['1 estrella', '2 estrellas', '3 estrellas', '4 estrellas', '5 estrellas'],
+                    datasets: [{
+                        label: '# Estrellas',
+                        data: [20, 40, 60, 80, 100],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

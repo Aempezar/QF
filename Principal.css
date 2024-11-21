@@ -1,0 +1,1189 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Sección Principal */
+body {
+  background-color: #ffd700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Asegura que la altura sea al menos de 100vh */
+  overflow-x: hidden;
+  /* Evita desbordamiento horizontal */
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex-grow: 1;
+  /* Esto asegura que el contenido principal ocupe todo el espacio disponible */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0px 5px;
+}
+
+.navbar-nav .nav-link {
+  margin: 0 10px;
+  font-size: 18px;
+  padding: 0px 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff8c00 !important;
+  transform: scale(1.1);
+}
+
+nav .btn-outline-light {
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  color: #ffffff !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .btn-outline-light:hover {
+  background-color: #ff8c00;
+  color: #000;
+  border-color: #ff8c00;
+}
+
+.navbar-toggler {
+  border: 1px solid #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-collapse {
+  background-color: #000;
+  padding: 10px 0;
+  z-index: 10;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0px;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+h1 {
+  font-family: "Kumar One", serif;
+  font-weight: 50;
+  font-size: 95px;
+  margin-bottom: 20px;
+  margin-left: -150px;
+  color: #000;
+  margin-top: 20px;
+  /* Ajusta este valor según sea necesario */
+}
+
+.col-md-6 {
+  position: relative;
+}
+
+/* Posiciona la imagen en la esquina superior derecha */
+#principal-section .col-md-6 img {
+  position: absolute;
+  /* La imagen se posicionará en relación con el contenedor posicionado más cercano */
+  top: -500px;
+  /* Mueve la imagen hacia arriba */
+  right: -740px;
+  /* Mueve la imagen hacia la derecha */
+}
+
+p {
+  font-family: "Kristen ITC", cursive;
+  color: #000;
+  font-size: 25px;
+  font-weight: normal;
+  margin-left: -150px;
+  margin-top: 0;
+}
+
+.btn-custom {
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 30px;
+  margin-left: 550px;
+  margin-top: -50px;
+}
+
+.btn-custom:hover {
+  background-color: #ff8c00;
+  color: #000;
+}
+
+.custom-footer {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  position: relative;
+  /* Asegura que el footer no se superponga */
+}
+
+.custom-footer .custom-column {
+  margin-bottom: 0;
+}
+
+.custom-footer .custom-column img {
+  max-width: 100%;
+  height: auto;
+  margin-left: -170px;
+}
+
+.custom-footer h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.custom-footer .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.custom-footer .list-unstyled li {
+  margin-bottom: 5px;
+}
+
+.custom-footer .list-unstyled li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.custom-footer .list-unstyled li a:hover {
+  color: #ff8c00;
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .custom-footer {
+    font-size: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+  }
+
+  .custom-footer .col-md-2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .custom-footer .col-md-3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* viajaaaaaaaaaaaaaaaaaaaaaaaaaa */
+/* Estilo del spinner */
+.spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(102, 69, 9, 0.993);
+  border-top: 2px solid #d4a465;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+/* Animación del spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Oculta el texto y muestra el spinner cuando está cargando */
+.loading .text {
+  display: none;
+}
+
+.loading .spinner {
+  display: inline-block;
+}
+
+
+
+
+/*hay mas de viajaaaa*/
+
+/* Contenedor principal */
+.container_original {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* Asegura que los hijos ocupen toda la altura */
+  justify-content: space-between;
+  /* Formulario e imagen en lados opuestos */
+  gap: 0;
+  /* Sin espacio entre formulario e imagen */
+  background-color: #ffd700;
+  /* Fondo amarillo */
+  width: 100%;
+  /* Ocupa el ancho completo */
+  margin: 0;
+  /* Sin margen exterior */
+  padding: 0;
+  /* Sin padding exterior */
+  box-sizing: border-box;
+  /* Asegura que padding y borde no sumen al tamaño total */
+}
+
+/* Contenedor del formulario */
+.login-container {
+  background-color: rgba(217, 217, 217, 0.456);
+  /* Fondo ligeramente opaco */
+  padding: 20px;
+  /* Espaciado interno del formulario */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  width: 680px;
+  height: 600px;
+  /* Ocupa toda la altura */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra */
+  margin: 0;
+  /* Sin márgenes adicionales */
+  box-sizing: border-box;
+  /* Incluye padding en el tamaño total */
+  margin-left: 35px;
+  margin-top: 24px;
+}
+
+/* Título */
+.titulo {
+  font-family: "Kumar One", serif;
+  /* Fuente personalizada */
+  font-size: 28px;
+  /* Aumenta el tamaño del texto */
+  color: #000;
+  /* Color del texto */
+  margin-bottom: 20px;
+  /* Espaciado debajo del título */
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  display: flex;
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido verticalmente */
+  gap: 10px;
+  /* Espaciado entre elementos, si hay un ícono o texto adicional */
+  width: 100%;
+  /* Asegura que ocupe todo el ancho del contenedor */
+  height: auto;
+  /* Ajusta automáticamente la altura */
+  margin-left: auto;
+}
+
+.titulo i {
+  position: relative;
+  /* Permite mover el ícono */
+  top: -5px;
+  /* Ajusta el ícono hacia arriba */
+}
+
+.login-container p {
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  justify-content: center;
+  gap: 10px;
+  /* Espaciado entre elementos, si hay un ícono o texto adicional */
+  width: 100%;
+  margin-left: auto;
+}
+
+.form-login .input {
+  width: 95%;
+  /* Ocupa todo el ancho del contenedor */
+  max-width: 100%;
+  /* Limita el ancho máximo */
+  padding: 15px;
+  /* Espaciado interno */
+  margin: 30px 0;
+  /* Espaciado entre inputs */
+  background-color: rgba(232, 185, 49, 1);
+  /* Color amarillo similar al de la imagen */
+  border: none;
+  /* Elimina el borde */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+  /* Sombra para dar profundidad */
+  font-size: 1rem;
+  /* Tamaño del texto */
+  color: #000000;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el texto dentro del input */
+  outline: none;
+  /* Elimina el borde azul al hacer clic */
+  font-family: 'Arial', sans-serif;
+  /* Fuente para el texto */
+  margin-top: 1px;
+}
+
+/* Efecto al hacer hover sobre el input */
+.form-login .input:hover {
+  background-color: rgba(232, 185, 49, 0.9);
+  /* Hace el fondo un poco más oscuro */
+}
+
+/* Botón principal */
+.form-login .btn {
+  width: 40%;
+  margin-top: -5px;
+  /* Espaciado superior */
+  padding: 5px 10px;
+  /* Ajusta el espaciado interno */
+  background-color: rgba(229, 157, 0, 1);
+  /* Cambia el color del botón a naranja */
+  color: rgb(0, 0, 0);
+  /* Texto en color blanco */
+  border: none;
+  /* Elimina el borde */
+  border-radius: 30px;
+  /* Hace el botón redondeado */
+  font-size: 1rem;
+  /* Tamaño del texto */
+  font-size: 25px;
+  cursor: pointer;
+  /* Cambia el cursor al puntero */
+  transition: background-color 0.3s ease;
+  /* Transición para el efecto hover */
+  text-align: center;
+  /* Centra el texto en el botón */
+}
+
+/* Efecto al pasar el mouse (hover) */
+.form-login .btn:hover {
+  background-color: #ff6500;
+  /* Cambia a un naranja más oscuro */
+}
+
+/* Enlace de recuperación */
+.link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0052aa;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Separador visual */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #000;
+}
+
+
+/* Opciones alternativas */
+.auth-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+
+/* Botones de opciones */
+.auth-options .btn {
+  width: 100%;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/* Términos y condiciones */
+.terms {
+  font-size: 14px;
+  color: #464646;
+  margin-top: 20px;
+}
+
+/* Imagen */
+.img-session {
+  width: 747px;
+  /* Ocupará la mitad derecha del contenedor */
+  height: 647px;
+  /* Ocupa toda la altura */
+  object-fit: cover;
+  /* Ajusta la imagen sin distorsión */
+  margin: 0;
+  /* Sin margen adicional */
+  padding: 0;
+  /* Sin padding */
+  border-radius: 0;
+  /* Sin bordes redondeados */
+  display: block;
+}
+
+#footer {
+  display: block;
+  /* Asegura que sea visible inicialmente */
+}
+
+/* Navbar de la sección "Conduce" */
+#conduce-section {
+  background-color: #ffffff;
+  /* Fondo blanco para toda la sección */
+  padding: 5px;
+  max-width: 100%;
+  height: 61px;
+}
+
+/* Logo */
+#conduce-section #logoPrincipal {
+  font-family: "Koulen", sans-serif;
+  font-size: 35px;
+  color: black;
+  margin-left: 20px;
+  /* Mueve el logo más hacia la izquierda */
+  margin-top: -10px;
+  text-decoration: none;
+}
+
+/* Lista de pestañas */
+#conduce-section .nav-tabs {
+  border: none;
+  /* Elimina el borde */
+  justify-content: center;
+  /* Centra las pestañas */
+  margin-top: -20px;
+  /* Ajusta el margen */
+  padding: 0;
+  /* Elimina el padding interno */
+}
+
+/* Fuente para las pestañas */
+#conduce-section .nav-item .nav-link {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: black;
+  /* Color del texto */
+  padding: 12px 35px;
+  /* Espaciado reducido */
+  margin: 0 0px;
+  /* Espaciado entre pestañas */
+  text-decoration: none;
+  /* Elimina subrayado */
+  border: none;
+  /* Sin bordes */
+  background-color: transparent;
+  /* Sin fondo */
+  box-shadow: none;
+  /* Elimina sombras */
+  transition: color 0.2s ease, font-size 0.2s ease;
+  /* Transición suave */
+}
+
+/* Efecto hover para agrandar ligeramente la letra */
+#conduce-section .nav-item .nav-link:hover {
+  font-size: 20px;
+  /* Aumenta el tamaño ligeramente */
+  font-weight: 900;
+  /* Un poco más grueso al pasar el mouse */
+  color: #000;
+  /* Mantén el color negro */
+  border-bottom: 3px solid #000000;
+}
+
+/* Contenedor del título */
+.conduce-title-container {
+  flex: 1;
+  /* Permite al contenedor del título ocupar el espacio necesario */
+  padding-right: 30px;
+  /* Reduce el espacio entre el título y la imagen */
+  text-align: center;
+  /* Cambia la alineación del texto si es necesario */
+}
+
+/* Título */
+.conduce-title {
+  font-family: "Kumar One", serif;
+  /* Fuente del título */
+  font-size: 85px;
+  /* Tamaño del texto */
+  font-weight: 50;
+  /* Grosor del texto */
+  color: #000;
+  /* Color negro */
+  margin-top: 50px;
+  /* Sin margen superior */
+  margin-bottom: 10px;
+  /* Espaciado debajo del título */
+  padding-right: 400px;
+  /* Mueve el título hacia la derecha */
+}
+
+/* Contenedor para la imagen */
+.conduce-image-container {
+  flex-shrink: 0;
+  /* Evita que el contenedor de la imagen se reduzca */
+  text-align: right;
+  /* Asegura que la imagen se alinee a la derecha */
+  margin-left: 50px;
+}
+
+/* Imagen */
+.conduce-image-container img {
+  width: 560px;
+  /* Ajusta el tamaño de la imagen */
+  height: auto;
+  /* Mantiene la proporción */
+  margin-left: 20px;
+  /* Mueve la imagen hacia la derecha */
+  margin-top: -301px;
+  /* Mueve la imagen hacia arriba */
+}
+
+#conduce-section {
+  padding-right: 0;
+  /* Elimina el padding derecho */
+}
+
+/* Descripción */
+.conduce-description {
+  font-family: "Kristen ITC", cursive;
+  /* Fuente personalizada */
+  font-size: 25px;
+  /* Tamaño de fuente */
+  color: #000000;
+  /* Color del texto */
+  margin: 10px 0 10px 120px;
+  /* Aumenta el margen izquierdo */
+  line-height: 1.5;
+  /* Espaciado entre líneas */
+  max-width: calc(50% - 50px);
+  /* Limita el ancho máximo relativo al contenedor */
+  text-align: center;
+  /* Alinea el texto de forma justificada */
+  position: absolute;
+  /* Posiciona el botón de manera absoluta */
+  left: 5px;
+  /* Ajusta la posición horizontal */
+  top: 370px;
+  /* Ajusta la posición vertical */
+}
+
+/* Estilo del botón */
+.btn-reg {
+  background-color: #000000;
+  /* Color de fondo */
+  color: #fff;
+  /* Color del texto */
+  font-family: "Inter", sans-serif;
+  /* Fuente del texto */
+  font-size: 20px;
+  /* Tamaño del texto */
+  padding: 10px 25px;
+  /* Espaciado interno */
+  border: none;
+  /* Sin bordes */
+  border-radius: 40px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambia el cursor al pasar por encima */
+  transition: all 0.3s ease;
+  /* Transiciones suaves */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra */
+  margin-left: -430px;
+  /* Mueve el botón hacia la izquierda */
+  margin-top: 80px;
+  /* Baja el botón */
+  position: absolute;
+  /* Posiciona el botón de manera absoluta */
+}
+
+/* Hover (efecto al pasar el cursor) */
+.btn-reg:hover {
+  background-color: #ff6500;
+  /* Color de fondo al pasar el mouse */
+  color: #ffffff;
+  /* Color del texto al pasar el mouse */
+  transform: scale(1.1);
+  /* Aumenta el tamaño ligeramente */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  /* Sombra más fuerte */
+}
+
+.mt-3 {
+  font-family: "Kristen ITC", cursive;
+  /* Fuente del texto */
+  font-size: 22px;
+  /* Tamaño del texto */
+  color: black;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el contenido */
+  margin-left: -550px;
+  line-height: 1.5;
+  /* Espaciado entre líneas */
+  position: relative;
+  top: 140px;
+}
+
+/* Estilo para el enlace "Iniciar sesión" */
+.conduce-link {
+  font-family: "Kristen ITC", cursive;
+  /* Fuente del texto */
+  font-size: 20px;
+  /* Tamaño del texto */
+  color: #007bff;
+  /* Color azul predeterminado */
+  text-decoration: none;
+  /* Elimina subrayado */
+  transition: all 0.3s ease;
+  /* Transición suave para hover y focus */
+  position: relative;
+}
+
+.ganancias-title {
+  font-family: "Inter", sans-serif;
+  /* Fuente personalizada */
+  font-size: 40px;
+  /* Tamaño del texto */
+  color: #fff;
+  /* Texto blanco */
+  text-align: center;
+  /* Alinea el texto a la izquierda */
+  background-color: #000;
+  /* Fondo negro */
+  padding: 40px 108px;
+  /* Espaciado interno */
+  display: inline-block;
+  /* Fondo ajustado al texto */
+  margin-left: -735px;
+  /* Mueve el texto hacia la izquierda */
+  top: 560px;
+  /* Espaciado superior opcional */
+  position: absolute;
+}
+
+/* Estilo general de la sección Conócenos */
+.conocenos-title {
+  font-family: "Kumar One", serif;
+  font-size: 48px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+.btn-conocenos {
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-conocenos:hover {
+  background-color: #ff6500;
+  transform: scale(1.1);
+}
+
+/* Contenedor de los dashboards */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Tarjetas (dashboard) */
+.dashboard-card {
+  perspective: 1000px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card .front {
+  background-color: #000;
+}
+
+.card .back {
+  background-color: #ff6500;
+  transform: rotateY(180deg);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* Contenedor principal de la sección */
+#inicia-section .container,
+#registrate-section .container {
+  background-color: white;
+  /* Fondo blanco */
+  width: 120%;
+  /* Aumenta el ancho más allá del tamaño de la pantalla */
+  max-width: none;
+  /* Permite que el contenedor supere el ancho estándar */
+  height: 42vh;
+  /* Mantiene la altura */
+  display: flex;
+  /* Flexbox para dividir en dos columnas */
+  flex-direction: row;
+  /* Alinea las columnas en horizontal */
+  justify-content: space-between;
+  /* Espacio entre las columnas */
+  align-items: center;
+  /* Centra los elementos en el eje Y */
+  padding: 20px;
+  /* Espaciado interno */
+  margin: 0 auto;
+  /* Centra horizontalmente si no ocupa todo el ancho */
+}
+
+/* Estilo para la columna izquierda */
+.contenido-izquierda,
+.contenido-derecha {
+  width: 50%;
+  /* Ocupa la mitad del contenedor con algo de espacio */
+  text-align: center;
+  /* Centrar el texto */
+}
+
+/* Estilo para los textos dentro del contenedor */
+#inicia-section h1,
+#registrate-section h1 {
+  font-family: "Lucida Sans", sans-serif;
+  /* Tipo de letra */
+  font-size: 30px;
+  /* Reduce el tamaño del texto */
+  color: #000000;
+  /* Color del texto */
+  margin-bottom: 10px;
+  /* Espaciado inferior */
+}
+
+/* Estilo para los contenedores de las flechas */
+.fle-derecha {
+  display: flex;
+  justify-content: center;
+  /* Centra el enlace */
+}
+
+/* Contenedor de imágenes inferior */
+.contenido-abajo {
+  background-color: black;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  /* Centra los elementos en el eje X */
+  align-items: center;
+  /* Los posiciona en el eje Y */
+}
+
+
+/*CONTACTANOS*/
+/* Redes Sociales en Cuadrícula (lado derecho) */
+#contactanos-section .social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Dos columnas */
+  grid-template-rows: repeat(2, 1fr);
+  /* Dos filas */
+  gap: 10px;
+  /* Espacio entre íconos */
+  position: absolute;
+  /* Posiciona el contenedor al lado derecho */
+  top: 56%;
+  right: 20px;
+  /* Ajusta la distancia desde el borde derecho */
+  transform: translateY(-50%);
+  /* Centra verticalmente la cuadrícula */
+}
+
+#contactanos-section .social-icons img {
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.2s;
+  margin: 0;
+  /* Elimina márgenes */
+}
+
+#contactanos-section .social-icons img:hover {
+  transform: scale(1.1);
+  /* Efecto de zoom al pasar el mouse */
+}
+
+/* Imagen al lado izquierdo */
+#contactanos-section .left-image {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  /* Ajusta la distancia desde el borde izquierdo */
+  transform: translateY(-40%);
+}
+
+#contactanos-section .left-image img {
+  width: 240px;
+  /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
+
+#contactanos-section .base {
+  font-size: 30px;
+  /* Tamaño del texto */
+  color: #ffffff;
+  /* Color del texto */
+  font-weight: bold;
+  /* Texto en negrita */
+  text-align: center;
+  /* Centrado horizontal */
+  margin: 0;
+  /* Elimina márgenes */
+  padding: 0;
+  /* Sin espaciado interno adicional */
+  width: 100%;
+  /* Ocupa todo el ancho */
+  height: 100px;
+  /* Ajusta la altura según el diseño */
+  background-color: #000;
+  /* Fondo negro */
+  display: flex;
+  /* Flexbox para centrar contenido */
+  justify-content: center;
+  /* Centra el texto horizontalmente */
+  align-items: center;
+  /* Centra el texto verticalmente */
+  position: absolute;
+  /* Asegura que el elemento quede fijo */
+  bottom: 0;
+  /* Ubicado en la parte inferior del contenedor padre */
+  left: 0;
+  /* Asegura alineación desde el borde izquierdo */
+}
+
+#contactanos-section .container h1 {
+  font-size: 77px;
+  font-weight: bold;
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  transform: translateY(20%);
+}
+
+#contactanos-section .container h2 {
+  font-family: "Kristen ITC", cursive;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+  margin-left: -120px;
+  transform: translateY(350%);
+}
+
+#contactanos-section .contact-form {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 140px;
+  margin-left: -100px;
+  font-family: "Inter", sans-serif;
+}
+
+#contactanos-section .contact-form label {
+  margin-bottom: 2px;
+  font-size: 20px;
+}
+
+#contactanos-section .contact-form input,
+#contactanos-section .contact-form textarea {
+  margin-bottom: 10px;
+  /* Espaciado entre los campos */
+  padding: 10px;
+  /* Espaciado interno más grande */
+  width: 550px;
+  /* Ancho de los cuadros */
+  border: none;
+  /* Quita los bordes */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  /* Sombreado debajo */
+  font-size: 18px;
+  /* Tamaño de texto dentro del cuadro */
+  background-color: #f8f8f8;
+  /* Fondo claro */
+}
+
+#contactanos-section .contact-form button {
+  font-family: "Inter", sans-serif;
+  background-color: #FF8C00;
+  color: #fff;
+  padding: 5px 60px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#contactanos-section .contact-form button:hover {
+  background-color: #b2d1ff;
+  transform: scale(1.1);
+  /* Efecto de zoom al pasar el mouse */
+}
+
+
+/*REGUSTRAR USUARIO*/
+/* Fondo general de la sección */
+.rU-section {
+  max-width: 95%;
+  /* Ajusta el ancho máximo al 90% del contenedor padre */
+  width: 100%;
+  /* Asegura que ocupe todo el ancho permitido */
+  height: 160%;
+  max-height: 95%;
+  /* Establece un alto fijo */
+  padding: 0;
+}
+
+.rC-section {
+  max-width: 95%;
+  /* Ajusta el ancho máximo al 90% del contenedor padre */
+  width: 100%;
+  /* Asegura que ocupe todo el ancho permitido */
+  height: 160%;
+  padding: 0;
+}
+
+/* Estilo del encabezado */
+.rU-section h1 {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  margin-top: -20px;
+  font-size: 30px;
+}
+
+.rC-section h1 {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  margin-top: -20px;
+  font-size: 30px;
+}
+
+/* Estilo de los inputs */
+.formulario-coloreado .form-control {
+  background-color: #f5c722;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombras suaves */
+}
+
+/* Estilo de los labels con íconos */
+.formulario-coloreado .form-label {
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.formulario-coloreado .form-label i {
+  margin-right: 10px;
+}
+
+/* Estilo de los botones */
+.formulario-coloreado .btn {
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.formulario-coloreado .btn-primary {
+  background-color: #ff8c00;
+  border: none;
+}
+
+/* Estilo del texto de términos */
+.formulario-coloreado p {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 0;
+  /* Ajusta el margen inferior del párrafo */
+  padding-bottom: 0;
+  /* Ajusta el padding inferior del párrafo */
+}
+
+.formulario-coloreado p a {
+  font-size: 10px;
+  align-items: center;
+  margin-left: 150px;
+  display: inline-flex;
+  text-align: center;
+  margin-bottom: 0;
+  /* Elimina el margen inferior */
+  padding-bottom: 0;
+  /* Elimina el padding inferior */
+}
+
+.formulario-coloreado p a:hover {
+  color: rgb(0, 8, 255);
+  text-decoration: underline;
+}
+
+/* Imagen al costado derecho */
+.rU-section .col-md-6 img {
+  border-radius: 15px;
+  height: 750px;
+  width: 800px;
+  padding: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen al costado derecho */
+.rC-section .col-md-6 img {
+  border-radius: 15px;
+  height: 750px;
+  width: 1900px;
+  padding: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
